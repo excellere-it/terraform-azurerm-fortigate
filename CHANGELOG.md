@@ -7,6 +7,40 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### BREAKING CHANGES
+
+- **Removed FortiOS Provider Dependency**:
+  - FortiOS provider has been completely removed from module requirements
+  - Eliminates circular dependency chains and deployment complexity
+  - Module now deploys Azure infrastructure only
+  - FortiGate configuration must be done via bootstrap or post-deployment
+
+### Changed
+
+- **Provider Requirements**:
+  - Removed `fortios` from required_providers in versions.tf
+  - Module now requires only `azurerm` provider
+  - Simplified deployment with no external provider dependencies
+
+- **Configuration Method**:
+  - Renamed `fortigate-config.tf` to `fortigate-config.tf.optional`
+  - FortiGate configuration now handled via bootstrap (custom_data)
+  - Added comprehensive migration guide in `FORTIOS_OPTIONAL_CONFIGURATION.md`
+
+### Deprecated
+
+- **Variables**:
+  - `enable_fortigate_configuration` - No longer has any effect, kept for backward compatibility
+  - Will be removed in next major version (1.0.0)
+
+### Documentation
+
+- Added `FORTIOS_OPTIONAL_CONFIGURATION.md` with:
+  - Detailed explanation of why FortiOS provider was removed
+  - Three alternative configuration methods
+  - Complete migration guide for existing deployments
+  - Example bootstrap configurations
+
 ## [0.0.2] - 2025-10-29
 
 ### Changed

@@ -958,31 +958,25 @@ variable "tags" {
 
 variable "enable_fortigate_configuration" {
   description = <<-EOT
-    Enable FortiGate appliance configuration using FortiOS provider.
+    DEPRECATED: FortiOS provider has been removed from this module to eliminate dependency chains.
+    This variable is kept for backward compatibility but has no effect.
 
-    When enabled:
-    - FortiOS provider will connect to the deployed FortiGate appliance
-    - Terraform will configure FortiGate system settings, interfaces, routing, HA, and policies
-    - Requires FortiGate VM to be fully booted and accessible
+    FortiGate configuration should now be done via:
+    1. Bootstrap configuration (custom_data/cloud-init) - RECOMMENDED
+    2. Post-deployment scripts (Azure Custom Script Extension)
+    3. Separate Terraform configuration with FortiOS provider
 
-    When disabled:
-    - Only Azure infrastructure is deployed
-    - FortiGate configuration must be done manually or via bootstrap files
+    See FORTIOS_OPTIONAL_CONFIGURATION.md for detailed migration guide.
 
-    IMPORTANT: The FortiGate VM must be fully booted before configuration can be applied.
-    This typically takes 5-10 minutes after VM creation. The provider will retry connections
-    automatically.
-
-    Production recommendation: true (for full infrastructure-as-code automation)
-    Development: Can be set to false for manual configuration
+    This variable will be removed in the next major version.
   EOT
   type        = bool
   default     = false
 }
 
-# NOTE: FortiOS provider configuration variables have been removed.
-# The FortiOS provider must be configured externally by the caller.
-# See FORTIOS_CONFIGURATION.md for provider setup examples.
+# NOTE: FortiOS provider has been removed from this module.
+# FortiGate configuration should be done via bootstrap or post-deployment.
+# See FORTIOS_OPTIONAL_CONFIGURATION.md for configuration options.
 
 # =============================================================================
 # MONITORING & DIAGNOSTICS
