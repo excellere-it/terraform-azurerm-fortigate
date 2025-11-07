@@ -927,8 +927,6 @@ The following resources are used by this module:
 - [azurerm_monitor_diagnostic_setting.port2](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting) (resource)
 - [azurerm_monitor_diagnostic_setting.port3](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting) (resource)
 - [azurerm_monitor_diagnostic_setting.port4](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting) (resource)
-- [azurerm_monitor_diagnostic_setting.private_nsg](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting) (resource)
-- [azurerm_monitor_diagnostic_setting.public_nsg](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting) (resource)
 - [azurerm_monitor_diagnostic_setting.vm](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting) (resource)
 - [azurerm_network_interface.port1](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_interface) (resource)
 - [azurerm_network_interface.port2](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_interface) (resource)
@@ -936,8 +934,6 @@ The following resources are used by this module:
 - [azurerm_network_interface.port4](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_interface) (resource)
 - [azurerm_network_interface.port5](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_interface) (resource)
 - [azurerm_network_interface.port6](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_interface) (resource)
-- [azurerm_network_watcher_flow_log.private_nsg](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_watcher_flow_log) (resource)
-- [azurerm_network_watcher_flow_log.public_nsg](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_watcher_flow_log) (resource)
 - [azurerm_public_ip.mgmt_ip](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/public_ip) (resource)
 - [azurerm_virtual_machine_data_disk_attachment.fgt_log_drive_attachment](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_machine_data_disk_attachment) (resource)
 - [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/client_config) (data source)
@@ -1843,10 +1839,6 @@ Description: The short naming suffix from terraform-namer (e.g., 'firewall-cu-pr
 
 Description: The VM-optimized naming suffix (max 15 chars) from terraform-namer
 
-### <a name="output_nsg_flow_logs_enabled"></a> [nsg\_flow\_logs\_enabled](#output\_nsg\_flow\_logs\_enabled)
-
-Description: Indicates if NSG flow logs are enabled
-
 ### <a name="output_port1_id"></a> [port1\_id](#output\_port1\_id)
 
 Description: Azure resource ID of port1 network interface (HA Management)
@@ -1894,22 +1886,6 @@ Description: Azure resource ID of port6 network interface (optional additional i
 ### <a name="output_port6_private_ip"></a> [port6\_private\_ip](#output\_port6\_private\_ip)
 
 Description: Private IP address of port6 (optional additional interface). Null if port6 not configured
-
-### <a name="output_private_nsg_id"></a> [private\_nsg\_id](#output\_private\_nsg\_id)
-
-Description: Azure resource ID of the private network security group (port2, port3)
-
-### <a name="output_private_nsg_name"></a> [private\_nsg\_name](#output\_private\_nsg\_name)
-
-Description: Name of the private network security group
-
-### <a name="output_public_nsg_id"></a> [public\_nsg\_id](#output\_public\_nsg\_id)
-
-Description: Azure resource ID of the public network security group (port1, port4)
-
-### <a name="output_public_nsg_name"></a> [public\_nsg\_name](#output\_public\_nsg\_name)
-
-Description: Name of the public network security group
 
 ## Example Usage
 
