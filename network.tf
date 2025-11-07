@@ -311,36 +311,3 @@ resource "azurerm_network_interface" "port6" {
 
   tags = local.common_tags
 }
-
-# =============================================================================
-# NSG TO NETWORK INTERFACE ASSOCIATIONS
-# =============================================================================
-
-# Associate public NSG with port1 (HA Management)
-resource "azurerm_network_interface_security_group_association" "port1nsg" {
-  depends_on                = [azurerm_network_interface.port1]
-  network_interface_id      = azurerm_network_interface.port1.id
-  network_security_group_id = azurerm_network_security_group.publicnetworknsg.id
-}
-
-# Associate public NSG with port4 (HA Sync)
-resource "azurerm_network_interface_security_group_association" "port4nsg" {
-  depends_on                = [azurerm_network_interface.port4]
-  network_interface_id      = azurerm_network_interface.port4.id
-  network_security_group_id = azurerm_network_security_group.publicnetworknsg.id
-}
-
-# Associate private NSG with port2 (WAN/Public)
-# Note: Despite being "WAN", it uses private NSG to allow all traffic for firewall inspection
-resource "azurerm_network_interface_security_group_association" "port2nsg" {
-  depends_on                = [azurerm_network_interface.port2]
-  network_interface_id      = azurerm_network_interface.port2.id
-  network_security_group_id = azurerm_network_security_group.privatenetworknsg.id
-}
-
-# Associate private NSG with port3 (LAN/Private)
-resource "azurerm_network_interface_security_group_association" "port3nsg" {
-  depends_on                = [azurerm_network_interface.port3]
-  network_interface_id      = azurerm_network_interface.port3.id
-  network_security_group_id = azurerm_network_security_group.privatenetworknsg.id
-}
