@@ -153,30 +153,6 @@ output "all_private_ips" {
 }
 
 # =============================================================================
-# NETWORK SECURITY GROUP OUTPUTS
-# =============================================================================
-
-output "public_nsg_id" {
-  description = "Azure resource ID of the public network security group (port1, port4)"
-  value       = azurerm_network_security_group.publicnetworknsg.id
-}
-
-output "public_nsg_name" {
-  description = "Name of the public network security group"
-  value       = azurerm_network_security_group.publicnetworknsg.name
-}
-
-output "private_nsg_id" {
-  description = "Azure resource ID of the private network security group (port2, port3)"
-  value       = azurerm_network_security_group.privatenetworknsg.id
-}
-
-output "private_nsg_name" {
-  description = "Name of the private network security group"
-  value       = azurerm_network_security_group.privatenetworknsg.name
-}
-
-# =============================================================================
 # STORAGE OUTPUTS
 # =============================================================================
 
@@ -197,11 +173,6 @@ output "data_disk_name" {
 output "diagnostics_enabled" {
   description = "Indicates if Azure Monitor diagnostics are enabled"
   value       = var.enable_diagnostics
-}
-
-output "nsg_flow_logs_enabled" {
-  description = "Indicates if NSG flow logs are enabled"
-  value       = var.enable_nsg_flow_logs
 }
 
 output "log_analytics_workspace_id" {
