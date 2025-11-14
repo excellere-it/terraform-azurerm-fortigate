@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.5] - 2025-01-14
+
+### Changed
+- Version alignment with updated module ecosystem
+- Tested with latest namer module (0.0.2)
+- Verified compatibility with azurerm provider 4.52.0
+
 ## [0.0.4] - 2025-01-13
 
 ### Changed
