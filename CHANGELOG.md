@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.6] - 2025-01-14
+
+### Fixed
+- Added required `storage_type` argument to `azurerm_image` resource's `os_disk` block
+- Fixes compatibility with azurerm provider v4.52.0 which made this argument required
+
 ## [0.0.5] - 2025-01-14
 
 ### Changed

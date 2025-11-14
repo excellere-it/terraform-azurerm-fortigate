@@ -101,10 +101,11 @@ resource "azurerm_image" "custom" {
   location            = var.location
 
   os_disk {
-    os_type  = "Linux"
-    os_state = "Generalized"
-    blob_uri = var.customuri
-    size_gb  = 2
+    os_type      = "Linux"
+    os_state     = "Generalized"
+    blob_uri     = var.customuri
+    size_gb      = 2
+    storage_type = "Standard_LRS"
   }
 
   tags = module.naming.tags
