@@ -17,7 +17,7 @@ terraform {
     # Version 3.x provides the necessary features for FortiGate deployment
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 3.0"
+      version = "~> 4.52.0"
     }
   }
 }
