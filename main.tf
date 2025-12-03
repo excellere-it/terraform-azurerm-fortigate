@@ -41,8 +41,7 @@
 # =============================================================================
 
 module "naming" {
-  source  = "app.terraform.io/infoex/namer/terraform"
-  version = "0.0.2"
+  source = "git::https://github.com/excellere-it/terraform-namer.git"
 
   contact     = var.contact
   environment = var.environment
