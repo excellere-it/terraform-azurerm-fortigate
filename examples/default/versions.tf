@@ -13,7 +13,7 @@ terraform {
     # Azure Resource Manager provider for Azure resources
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 4.52.0"
+      version = "~> 4.54.0"
     }
   }
 }
